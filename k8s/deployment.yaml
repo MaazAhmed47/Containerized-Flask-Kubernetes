@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sna-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sna
+  template:
+    metadata:
+      labels:
+        app: sna
+    spec:
+      containers:
+       - name: sna-container
+         image: sna-flask-app
+         imagePullPolicy: Never
+         ports:
+           - containerPort: 5000
+          
