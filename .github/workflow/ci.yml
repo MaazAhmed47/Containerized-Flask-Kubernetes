@@ -33,5 +33,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker tag sna-app ${{ secrets.syedmaaz001 }}/sna-app:latest
-          docker push ${{ secrets.syedmaaz001 }}/sna-app:latest
+          docker tag sna-app ${{ secrets.DOCKER_USERNAME }}/sna-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/sna-app:latest
