@@ -1,10 +1,10 @@
 from flask import Flask
 import socket
-import os
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
 
-# Replace with your actual bucket name and region
 S3_BUCKET = "sna-static-files"
 S3_REGION = "us-east-1"
 S3_IMAGE_URL = f"https://{S3_BUCKET}.s3.{S3_REGION}.amazonaws.com/logo.png"
