@@ -4,6 +4,7 @@ import os
 
 app = Flask(__name__)
 
+# Replace with your actual bucket name and region
 S3_BUCKET = "sna-static-files"
 S3_REGION = "us-east-1"
 S3_IMAGE_URL = f"https://{S3_BUCKET}.s3.{S3_REGION}.amazonaws.com/logo.png"

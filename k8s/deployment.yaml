@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
        - name: sna-container
-         image: sna-flask-app
-         imagePullPolicy: Never
+         image: sna-app
+         imagePullPolicy: IfNotPresent
          ports:
            - containerPort: 5000
           
