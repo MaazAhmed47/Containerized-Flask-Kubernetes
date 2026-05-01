@@ -1,0 +1,41 @@
+---
+- name: Deploy Flask App with Docker
+  hosts: local
+  become: true
+
+  tasks:
+    - name: Install Docker dependencies
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Pull Flask Docker image
+      community.docker.docker_image:
+        name: syedmaaz001/sna-app
+        tag: latest
+        source: pull
+
+    - name: Run Flask container
+      community.docker.docker_container:
+        name: flask-app
+        image: syedmaaz001/sna-app:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "5000:5000"
