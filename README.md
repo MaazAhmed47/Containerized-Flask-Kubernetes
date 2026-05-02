@@ -205,6 +205,22 @@ docker compose up --build
 
 ---
 
+## 📸 Screenshots
+
+### Ansible Playbook — Successful Run
+![Ansible](screenshots/ansible-playbook.png)
+
+### Grafana — Request Latency Dashboard
+![Grafana Latency](screenshots/grafana-latency.png)
+
+### Grafana — Total Flask Requests
+![Grafana Requests](screenshots/grafana-requests.png)
+
+### Prometheus — Flask Target UP
+![Prometheus](screenshots/prometheus-target.png)
+
+---
+
 ## 🚀 Quick Start
 
 ```bash
